@@ -155,7 +155,8 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if (esPositivo(numero)) return "Es positivo";
+  if (Math.sign(numero) == 1 ) return "Es positivo"
+  else if ( Math.sign(numero) == 0 ) return false;
   return "Es negativo"; 
 }
 
@@ -183,21 +184,21 @@ function obtenerSaludo(nombre) {
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
-  return Math.obtenerAreaRectangulo(alto, ancho); 
+  return alto * ancho; 
 }
 
 
 function retornarPerimetro(lado){
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
-  return Math.retornarPerimetro(lado);
+  return 4*lado;
 }
 
 
 function areaDelTriangulo(base, altura){
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
-  return Math.areaDelTriangulo(base, altura); 
+  return base * altura / 2 ; 
 }
 
 
@@ -215,9 +216,8 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
   //Escribe tu código aquí
-  if (letra.length !== 1) return "Dato incorrecto";
-  if (esVocal(letra)) return "Es vocal";
-  return "Dato incorrecto"; 
+  if (letra.length == 1 && (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u" )) {return "Es vocal"}
+  return "Dato incorrecto";
 }
 
 
